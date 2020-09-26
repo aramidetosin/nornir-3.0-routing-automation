@@ -1,0 +1,120 @@
+2020-09-26 22:28:06,402 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 22:28:06,409 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.56.6/24'
+
+2020-09-26 22:28:06,409 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.13.3/24'
+
+2020-09-26 22:28:06,410 - nornir.core.task -    ERROR -      start() - Host 'R9': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.69.9/24'
+
+2020-09-26 22:28:06,410 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.18.8/24'
+
+2020-09-26 22:28:06,410 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.17.7/24'
+
+2020-09-26 22:28:06,410 - nornir.core.task -    ERROR -      start() - Host 'R10': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.40.10/24'
+
+2020-09-26 22:28:06,410 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.24.4/24'
+
+2020-09-26 22:28:06,411 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.12.1/24'
+
+2020-09-26 22:28:06,411 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.12.2/24'
+
+2020-09-26 22:28:06,411 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'interfaces_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo2/configure_interfaces-ospf-eigrp-rip-redistribute.py", line 15, in interfaces_config
+    interface = ipaddress.IPv4Address(interface)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ipaddress.py", line 1251, in __init__
+    raise AddressValueError("Unexpected '/' in %r" % address)
+ipaddress.AddressValueError: Unexpected '/' in '192.1.35.4/24'
+
+2020-09-26 22:30:51,758 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 22:42:03,404 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 22:42:04,731 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 22:42:04,957 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 22:42:05,565 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 22:42:05,803 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 22:42:06,065 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 22:43:41,105 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 22:43:42,400 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 22:43:42,591 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 22:43:43,127 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 22:43:43,351 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 22:43:43,591 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-26 22:47:33,513 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-26 22:47:34,851 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-26 22:47:35,091 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-26 22:47:35,547 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-26 22:47:35,804 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-26 22:47:36,006 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts

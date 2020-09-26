@@ -1,0 +1,72 @@
+---
+# nw_advertised is defined in hosts.yaml as a dictionary of OSPF area keys,
+# and list of networks to be advertised in each OSPF area as values.
+# Each OSPF area will advertised some networks.
+# For example: R7
+# nw_advertised: {"0": ["192.1.67.0/24", "7.0.0.0/8"], "10": ["192.1.78.0/24"]}
+# R7 will advertise 2 networks in area 0: ["192.1.67.0/24", "7.0.0.0/8"];
+# and 1 network in area 10: ["192.1.78.0/24"]
+R1:
+    hostname: 172.16.100.168
+    groups:
+        - area0
+    data:
+        id: 1
+        nw_advertised: {"0": ["192.1.100.0/24", "1.0.0.0/8"]}
+
+R2:
+    hostname: 172.16.100.219
+    groups:
+        - area0
+    data:
+        id: 2
+        nw_advertised: {"0": ["192.1.100.0/24", "2.0.0.0/8", "192.1.102.0/24"]}
+
+R3:
+    hostname: 172.16.100.165
+    groups:
+        - area0
+    data:
+        id: 3
+        nw_advertised: {"0": ["192.1.100.0/24", "3.0.0.0/8", "192.1.101.0/24"]}
+
+R4:
+    hostname: 172.16.100.164
+    groups:
+        - area0
+    data:
+        id: 4
+        nw_advertised: {"0": ["192.1.101.0/24", "4.0.0.0/8", "192.1.103.0/24"]}
+
+R5:
+    hostname: 172.16.100.220
+    groups:
+        - area0
+    data:
+        id: 5
+        nw_advertised: {"0": ["192.1.102.0/24", "5.0.0.0/8", "192.1.103.0/24"]}
+
+R6:
+    hostname: 172.16.100.221
+    groups:
+        - area0
+    data:
+        id: 6
+        nw_advertised: {"0": ["192.1.101.0/24", "6.0.0.0/8", "192.1.67.0/24"]}
+
+R7:
+    hostname: 172.16.100.222
+    groups:
+        - area0
+        - area10
+    data:
+        id: 7
+        nw_advertised: {"0": ["192.1.67.0/24", "7.0.0.0/8"], "10": ["192.1.78.0/24"]}
+
+R8:
+    hostname: 172.16.100.223
+    groups:
+        - area10
+    data:
+        id: 8
+        nw_advertised: {"10": ["192.1.78.0/24", "8.0.0.0/8"]}

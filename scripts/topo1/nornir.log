@@ -1,0 +1,2157 @@
+2020-09-26 18:56:47,142 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 8 hosts
+2020-09-26 19:08:45,425 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:08:45,445 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.168
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.168:22
+
+
+
+2020-09-26 19:08:45,445 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.165
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.165:22
+
+
+
+2020-09-26 19:08:45,445 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.221
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.221:22
+
+
+
+2020-09-26 19:08:45,445 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.220
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.220:22
+
+
+
+2020-09-26 19:08:45,445 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.219
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.219:22
+
+
+
+2020-09-26 19:08:45,446 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.164
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.164:22
+
+
+
+2020-09-26 19:08:45,446 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.223
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.223:22
+
+
+
+2020-09-26 19:08:45,446 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 918, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 172.16.100.222
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 302, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 344, in __init__
+    self._open()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 349, in _open
+    self.establish_connection()
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 940, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 172.16.100.222:22
+
+
+
+2020-09-26 19:08:45,447 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:08:45,447 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:08:45,447 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:08:45,447 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:08:45,447 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:08:45,448 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:08:45,448 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:08:45,448 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 27, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:30:25,665 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:41:38,095 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:42:48,053 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:43:17,468 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:43:38,244 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,244 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:43:38,292 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,292 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:43:38,439 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,439 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:43:38,480 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,481 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:43:38,514 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,515 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:43:38,519 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,519 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:43:38,540 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,540 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:43:38,553 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:43:38,554 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:11,538 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:44:32,318 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,318 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,320 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:32,320 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:32,322 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,322 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:32,385 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,386 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:32,407 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,407 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:32,421 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,421 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:32,485 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,485 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:44:32,540 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:44:32,540 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 28, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:45:22,127 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:47:23,944 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:47:44,677 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,678 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:44,679 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,679 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:44,819 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,820 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:44,822 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,822 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:44,840 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,841 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:44,867 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,868 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:44,878 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,878 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:44,892 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:47:44,892 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:47:50,544 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:48:11,211 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,212 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:48:11,334 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,335 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:48:11,374 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,375 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:48:11,396 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,396 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:48:11,420 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,421 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:48:11,433 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,434 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:48:11,585 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,586 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:48:11,712 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:48:11,713 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 31, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:05,008 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 19:57:25,638 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,639 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:25,660 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,661 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:25,730 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,730 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:25,733 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,733 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:25,741 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,741 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:25,742 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,742 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:25,793 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,794 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:57:25,948 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 567, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1823, in send_config_set
+    new_output = self.read_until_pattern(pattern=pattern)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 644, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 577, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-09-26 19:57:25,949 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/scripts/topo1/ospf_configure.py", line 29, in ospf_config
+    task.run(netmiko_send_config, config_commands=ospf_cms)
+  File "/Users/aramide/Google Drive/nornir-3.0-routing-automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2020-09-26 19:58:39,764 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
+2020-09-26 20:24:57,054 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 8 hosts
