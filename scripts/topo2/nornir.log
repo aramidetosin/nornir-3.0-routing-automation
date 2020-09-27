@@ -118,3 +118,10 @@ ipaddress.AddressValueError: Unexpected '/' in '192.1.35.4/24'
 2020-09-26 22:47:35,547 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
 2020-09-26 22:47:35,804 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
 2020-09-26 22:47:36,006 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-27 12:35:12,283 -  nornir.core -     INFO -        run() - Running task 'interfaces_config' with args {} on 10 hosts
+2020-09-27 12:35:13,723 -  nornir.core -     INFO -        run() - Running task 'eigrp_config' with args {} on 3 hosts
+2020-09-27 12:35:13,885 -  nornir.core -     INFO -        run() - Running task 'ospf_config' with args {} on 7 hosts
+2020-09-27 12:35:14,398 -  nornir.core -     INFO -        run() - Running task 'rip_config' with args {} on 2 hosts
+2020-09-27 12:35:14,659 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R1_config' with args {} on 1 hosts
+2020-09-27 12:35:14,847 -  nornir.core -     INFO -        run() - Running task 'redistribute_at_R6_config' with args {} on 1 hosts
+2020-09-27 13:05:15,034 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['tclsh', 'foreach address {172.16.100.238} {ping $address}', 'exit'], 'enter_config_mode': False} on 10 hosts
