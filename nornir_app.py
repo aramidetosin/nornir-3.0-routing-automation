@@ -54,13 +54,13 @@ def configure_snmp():
 
 
 def main():
-    configure_snmp() # You can use   this command to configure the snmp if not already done.
+    # configure_snmp() # You can use   this command to configure the snmp if not already done.
     interval = 5  # seconds
     duration = 300  # seconds
     interface_dict = {
         "ifindex": 8,  # This is the index of the interface MIB
-        "ifname": "Ethernet0/3",
-        "ifslug": "ei0_3"
+        "ifname": "Ethernet0/0",
+        "ifslug": "ei0_0"
     }
 
     get_interface_utilization(
